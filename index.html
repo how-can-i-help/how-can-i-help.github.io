@@ -8,20 +8,15 @@
 	<script type="text/javascript">
 	$(document).ready(function(){
 		$('a.donate').click(function(e){
-			e.preventDefault();
-			window.open('http://nationalbailout.org');
-			window.open('https://action.justiceforbreonna.org/sign/BreonnaWasEssential/');
-			window.open('https://minnesotafreedomfund.org/donate');
-			window.open('https://secure.actblue.com/donate/ms_blm_homepage_2019');
-			window.open('https://www.gofundme.com/f/georgefloyd');
-			window.open('https://docs.google.com/document/u/0/d/1X4-YS3vFn5CLL9QtJSU0xqmTh_h8XilXgOqGAjZISBI/mobilebasic');
-			window.open('https://docs.google.com/document/d/1CjZMORRVuv-I-qo4B0YfmOTqIOa3GUS207t5iuLZmyA/mobilebasic');
-			window.open('https://brooklynbailfund.org/donate');
-			window.open('https://secure.everyaction.com/zae4prEeKESHBy0MKXTIcQ2');
+			$('#info').css({'display' : 'inline-block'});
+			$('#learn').hide();
+			$('#donate').show();
 		});
 		$('a.learn').click(function(e){
-			window.open('https://www.instagram.com/p/B-h9N2NgMe6/?igshid=1ssap0f4j07ib');
-			window.open('https://docs.google.com/document/u/4/d/1BRlF2_zhNe86SGgHa6-VlBO-QgirITwCTugSfKie5Fs/mobilebasic?fbclid=IwAR2h9Z-bTvvSfo92k47YL0bjy6ZvYLYMD6nZsO9jiNi4cV0NA0wlN94jXsM');
+
+			$('#info').css({'display' : 'inline-block'});
+			$('#donate').hide();
+			$('#learn').show();
 		});
 	});
 	</script>
@@ -54,66 +49,123 @@
 			margin: 50 auto;
 			text-align: center;
 		}
-		a
+		a.nav, #info
 		{
 			font-size: 25px;
 			font-weight: 800;
 			color: pink;
 			width: 300px;
 			height: 300px;
-			padding: 10px;
-			margin: 10px;
 			display: inline-block;
 			border: 1px solid pink;
 			text-align: left;
-			text-decoration: underline;
 			vertical-align: middle;
 		}
-		a:hover
+		a.nav
+		{
+			padding: 10px;
+			margin: 10px;
+			text-decoration: underline;
+		}
+		a.nav:hover
 		{
 			text-decoration: none;
 			color: #003261;
 			background-color: pink;
-		}
-		a.donate:hover::after
-		{
-			content:'Click to open several fundraisers by organizations fighting against police violence, as well as to support the families of victims of racist police murder and those arrested during protests.';
-		}
-		a.learn:hover::after
-		{
-			content:'This means raising your children to be anti-racists.';
 		}
 		a.flier
 		{
 			width: 1000px;
 			height: auto;
 		}
+		a.donate:hover::after
+		{
+			content:'Click to view fundraisers by organizations fighting against police violence, and in support of the families of victims of racist police murder and those arrested during protests.';
+			font-weight: 400;
+		}
+		a.learn:hover::after
+		{
+			content:'Click for resources for educating yourself and others, including your children.';
+			font-weight: 400;
+		}
 		a.flier:hover::after
 		{
-			content: 'Hang them up at grocery stores and parks to ensure maximum visibility during COVID.';
+			content: 'More visibility nationwide means more financial and moral support for the movement against racist police violence.';
+			font-weight: 400;
+		}
+		div#info
+		{
+			display: none;
+			width: 1020px;
+			height: auto;
+			margin: 0px;
+			padding: 0px;
 		}
 		footer
 		{
-			position: fixed;
-			bottom: 0px;
 			width: 100%;
+		}
+		ul
+		{
+			list-style: none;
+			margin: 0px 0px 0px -40px;
+		}
+		ul a
+		{
+			color: pink;
+			display: block;
+			padding: 15px;
+			border-bottom: 1px solid pink;
+			text-decoration: none;
+			font-weight: 400;
+		}
+		ul a:hover
+		{
+			background-color: pink;
+			color: #003261;
+			display: block;
+			padding: 15px;
+			border-bottom: 1px solid pink;
+		}
+		ul u
+		{
+			font-weight: 800;
 		}
 	</style>
 </head>
 <body>
 	<header>So how can I help?</header>
 	<div id="container">
-		<a href="#" class="donate">
+		<a href="#" class="donate nav">
 			Donate your money and time.
 		</a>
-		<a href="http://nomoreracistcops.github.io" target="_blank">
+		<a href="http://nomoreracistcops.github.io" target="_blank" class="nav">
 			Contact your local representatives and demand accountability for police violence.
 		</a>
-		<a href="#" class="learn">
+		<a href="#" class="learn nav">
 			Talk sense into racist family members and friends. 
-		</a><br/>
-		<a href="flier.png" target="_blank" class="flier">
-			Print out our flier and post it around your town.
+		</a>
+		<div id="info">
+			<div id="donate">
+				<ul><a href="https://secure.everyaction.com/zae4prEeKESHBy0MKXTIcQ2" target="_blank"><li>Donate to <u>Reclaim the Block</u> (Minneapolis)</li></a>
+					<a href="https://secure.everyaction.com/4omQDAR0oUiUagTu0EG-Ig2" target="_blank"><li>Donate to <u>Black Visions Collective</u> (Minneapolis)</li></a>
+					<a href="https://brooklynbailfund.org/donate" target="_blank"><li>Donate to <u>Brooklyn Bail Fund</u></li></a>
+					<a href="https://docs.google.com/document/d/1CjZMORRVuv-I-qo4B0YfmOTqIOa3GUS207t5iuLZmyA/mobilebasic" target="_blank"><li><u>Document:</u> Fundraisers Nationwide</li></a>
+					<a href="https://docs.google.com/document/u/0/d/1X4-YS3vFn5CLL9QtJSU0xqmTh_h8XilXgOqGAjZISBI/mobilebasic" target="_blank"><li><u>Document:</u> Bail Funds in Every City</li></a>
+					<a href="https://www.gofundme.com/f/georgefloyd" target="_blank"><li>GoFundMe: <u>George Floyd</u></li></a>
+					<a href="https://secure.actblue.com/donate/ms_blm_homepage_2019" target="_blank"><li>Donate to <u>Black Lives Matter</u></li></a>
+					<a href="https://minnesotafreedomfund.org/donate" target="_blank"><li>Donate to <u>Minnesota Freedom Fund</u></li></a>
+					<a href="https://action.justiceforbreonna.org/sign/BreonnaWasEssential/" target="_blank"><li><li>GoFundMe: <u>Breonna Taylor</u></li></a>
+					<a href="http://nationalbailout.org" target="_blank"><li>Donate to <u>National Bailout</u></li></a></ul>
+				</div>
+			<div id="learn">
+				<ul>
+					<a href="https://docs.google.com/document/u/4/d/1BRlF2_zhNe86SGgHa6-VlBO-QgirITwCTugSfKie5Fs/mobilebasic?fbclid=IwAR2h9Z-bTvvSfo92k47YL0bjy6ZvYLYMD6nZsO9jiNi4cV0NA0wlN94jXsM" target="_blank"><li><u>Document:</u> Anti-racism for White People: Educating Yourself, Your Peers, Your Family and Children, and Others</li></a>
+				</ul>
+			</div>
+		</div>
+		<a href="flier.png" target="_blank" class="flier nav">
+			Print out our flier and post it up around your home. Hang them up at grocery stores and parks to ensure maximum visibility during COVID.
 		</a>
 	</div>
 	<footer>Thank you</footer>
