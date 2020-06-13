@@ -10,13 +10,22 @@
 		$('a.donate').click(function(e){
 			$('#info').css({'display' : 'inline-block'});
 			$('#learn').hide();
+			$('#voice').hide();
 			$('#donate').show();
 		});
 		$('a.learn').click(function(e){
 
 			$('#info').css({'display' : 'inline-block'});
 			$('#donate').hide();
+			$('#voice').hide();
 			$('#learn').show();
+		});
+		$('a.voice').click(function(e){
+
+			$('#info').css({'display' : 'inline-block'});
+			$('#donate').hide();
+			$('#learn').hide();
+			$('#voice').show();
 		});
 	});
 	</script>
@@ -84,9 +93,14 @@
 			content:'Click to view fundraisers by organizations fighting against police violence, and in support of the families of victims of racist police murder and those arrested during protests.';
 			font-weight: 400;
 		}
+		a.voice:hover::after
+		{
+			content:'Click to sign open petitions for justice and contact your local representatives and demand accountability for police violence.';
+			font-weight: 400;
+		}
 		a.learn:hover::after
 		{
-			content:'Click for resources for educating yourself and others, including your children.';
+			content:'Click for resources for educating yourself and others, including your children and neighbors.';
 			font-weight: 400;
 		}
 		a.boss:hover::after
@@ -141,22 +155,21 @@
 		<a href="#" class="donate nav">
 			Donate your money and time.
 		</a>
-		<a href="http://nomoreracistcops.github.io" target="_blank" class="nav">
-			Contact your local representatives and demand accountability for police violence.
+		<a href="#" class="voice nav">
+			Use your voice.
 		</a>
 		<a href="#" class="learn nav">
-			Talk sense into racist family members and friends. 
+			Educate family members, friends, your children, and your neighbors about racism. 
 		</a>
-		<a href="https://how-can-i-help.github.io/Employer%20Letter%20for%20Accountability.pdf" class="boss nav">
+		<a href="https://c10.patreonusercontent.com/3/eyJhIjoxLCJwIjoxfQ%3D%3D/patreon-media/p/post/37737054/35448584e5c64e8ab78bd81482adde06/1?token-time=1591246227&token-hash=zSpe-rwJe3DfBJU0-BTRZlfYbecmjkw4i_Y1ZshCmug%3D" class="boss nav">
 			Contact your employer and encourage them to address anti-blackness in the workplace. 
 		</a>
 		<div id="info">
 			<div id="donate">
 				<ul><a href="https://secure.everyaction.com/zae4prEeKESHBy0MKXTIcQ2" target="_blank"><li>Donate to <u>Reclaim the Block</u> (Minneapolis)</li></a>
 					<a href="https://secure.everyaction.com/4omQDAR0oUiUagTu0EG-Ig2" target="_blank"><li>Donate to <u>Black Visions Collective</u> (Minneapolis)</li></a>
-					<a href="https://docs.google.com/spreadsheets/d/1qd2ewV6A6QF0Oz2GDIdQey9O6Ts_TaM3Qi7VUn--nqk/htmlview#" target="_blank"><li><u>Spreadsheet:</u> Where to donate in New Jersey</li></a>
-					<a href="https://www.gofundme.com/f/newark-water-coalition-fundraiser/donate" target="_blank"><li><u>GoFundMe:</u> Newark Water Coalition</li></a>
 					<a href="https://brooklynbailfund.org/donate" target="_blank"><li>Donate to <u>Brooklyn Bail Fund</u></li></a>
+					<a href="https://www.gofundme.com/f/newark-water-coalition-fundraiser/donate" target="_blank"><li><u>GoFundMe:</u> Newark Water Coalition</li></a>
 					<a href="https://docs.google.com/document/d/1CjZMORRVuv-I-qo4B0YfmOTqIOa3GUS207t5iuLZmyA/mobilebasic" target="_blank"><li><u>Document:</u> Fundraisers Nationwide</li></a>
 					<a href="https://docs.google.com/document/u/0/d/1X4-YS3vFn5CLL9QtJSU0xqmTh_h8XilXgOqGAjZISBI/mobilebasic" target="_blank"><li><u>Document:</u> Bail Funds in Every City</li></a>
 					<a href="https://bailfunds.github.io/" target="_blank"><li><u>Donate to</u> Bail Funds Nationwide</li></a>
@@ -166,9 +179,15 @@
 					<a href="https://action.justiceforbreonna.org/sign/BreonnaWasEssential/" target="_blank"><li><li><u>GoFundMe:</u> Breonna Taylor</li></a>
 					<a href="http://nationalbailout.org" target="_blank"><li>Donate to <u>National Bailout</u></li></a></ul>
 				</div>
+			<div id="voice">
+				<ul><a href="http://nomoreracistcops.github.io/" target="_blank"><li><u>No More Racist Cops:</u> Contact your local representatives and demand an end to racist police violence</li></a>
+					<a href="https://pendingpetition.carrd.co/" target="_blank"><li><u>Pending Petition:</u> Click to sign petitions that haven't yet met their goal</li></a></ul>
+				</div>
 			<div id="learn">
 				<ul>
 					<a href="https://docs.google.com/document/u/4/d/1BRlF2_zhNe86SGgHa6-VlBO-QgirITwCTugSfKie5Fs/mobilebasic?fbclid=IwAR2h9Z-bTvvSfo92k47YL0bjy6ZvYLYMD6nZsO9jiNi4cV0NA0wlN94jXsM" target="_blank"><li><u>Document:</u> Anti-racism for White People: Educating Yourself, Your Peers, Your Family and Children, and Others</li></a>
+					<a href="https://docs.google.com/document/d/1dXGQhfkf6--1haHxxnQER3mvBHlUcCYHxT3CKLBOwZY/edit" target="_blank"><li><u>Document:</u> How to teach your kids about race and racism</li></a>
+					<a href="how-can-i-help.org/educate.html" target="_blank"><li> <u>Educate your block:</u> A letter writing campaign for collaborating with neighbors to challenge racism in your community</li></a>
 					<a href="https://lettersforblacklives.com/chinese-trad-6770eed17e9" target="_blank"><li><u>Document:</u> 親愛的媽媽、爸爸、叔叔、阿姨：我們也珍惜黑人的生命</li></a>
 					<a href="https://lettersforblacklives.com/chinese-simp-edbf828433c3" target="_blank"><li><u>Document:</u>  亲爱的妈妈、爸爸、叔叔、阿姨：我们也珍惜黑人的生命</li></a>
 					<a href="https://lettersforblacklives.com/queridos-m%C3%A3e-pai-tio-tia-as-vidas-dos-negros-tamb%C3%A9m-importam-d610375ea8d0" target="_blank"><li><u>Document:</u> Queridos mãe, pai, tio, tia: as vidas dos negros também importam</li></a>
@@ -182,7 +201,7 @@
 					<a href="https://lettersforblacklives.com/%E0%B8%96%E0%B8%B6%E0%B8%87%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%9E%E0%B9%88%E0%B8%AD-%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B9%81%E0%B8%A1%E0%B9%88-%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B8%8D%E0%B8%B2%E0%B8%95%E0%B8%B4%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B9%81%E0%B8%A5%E0%B8%B0%E0%B9%80%E0%B8%84%E0%B8%B2%E0%B8%A3%E0%B8%9E-%E0%B8%8A%E0%B8%B5%E0%B8%A7%E0%B8%B4%E0%B8%95%E0%B8%84%E0%B8%99%E0%B8%9C%E0%B8%B4%E0%B8%A7%E0%B8%94%E0%B8%B3%E0%B8%81%E0%B9%87%E0%B8%A1%E0%B8%B5%E0%B8%84%E0%B8%A7%E0%B8%B2%E0%B8%A1%E0%B8%AB%E0%B8%A1%E0%B8%B2%E0%B8%A2%E0%B8%95%E0%B9%88%E0%B8%AD%E0%B9%80%E0%B8%A3%E0%B8%B2%E0%B9%80%E0%B8%AB%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%99%E0%B8%81%E0%B8%B1%E0%B8%99-ad7d82837d02" target="_blank"><li><u>Document:</u> ถึงคุณพ่อ คุณแม่ และญาติที่รักและเคารพ: ชีวิตคนผิวดำก็มีความหมายต่อเราเหมือนกัน</li></a>
 					<a href="https://lettersforblacklives.com/pyaari-ammi-abu-uncle-auntie-black-zindagiyan-humaray-liye-bhi-ehmiyat-rakhti-hain-9c7edc7baeb3"><li><u>Document:</u> Pyaari Ammi, Abu, Uncle, Auntie: Black zindagiyan humaray liye bhi ehmiyat rakhti hain</li></a>
 					<a href="https://www.instagram.com/p/CA3zLmYDrMw/?igshid=3nvda3xlfjqk" target="_blank"><li><u>Instagram post:</u> Six Ways for Arabs to Resist Anti-Blackness</li></a>
-					<a href="http://araborganizing.org/wp-content/uploads/2019/08/AROC_Buildtheblock_Arabic_IC_5aPRINT.pdf" target="_blank"><li><u>Document:</u> Tatwir bada2il lnidham alshurtah fi mujtma3at el3rabiah walmuslimah (Arabic)</li></a>
+					<!-- <a href="http://araborganizing.org/wp-content/uploads/2019/08/AROC_Buildtheblock_Arabic_IC_5aPRINT.pdf" target="_blank"><li><u>Document:</u> Tatwir badayil linizam alshurtat fi almujtam3at al3rabiat walmuslima(Arabic)</li></a> -->
 					<a href="http://araborganizing.org/wp-content/uploads/2019/08/AROC_Build-the-Block-Alternatives-to-Policing.pdf" target="_blank"><li><u>Document:</u> Developing Alternatives to Policing</li></a>
 				</ul>
 
