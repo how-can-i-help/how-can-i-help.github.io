@@ -7,25 +7,40 @@
 
 	<script type="text/javascript">
 	$(document).ready(function(){
-		$('a.donate').click(function(e){
-			$('#info').css({'display' : 'inline-block'});
+		$('.open').click(function(){
+			$('#info').show();
+			$('#container').animate({
+				'width' : '70vw',
+				'text-align': 'left',
+				'margin' : '50 0 50 0'
+			}, 300);
+			$('#info').animate({'width' : '30vw'}, 300);
+			// resize();
+		});
+		// function resize(){
+		// 	var aH = $('#info ul').height();
+		// 	var tH = $('#container').height();
+		// 	var h = Math.max(aH, tH);
+
+		// 	$('#container').height(h);
+		// 	$('#info ul').height(h);
+		// 	$('#info').height(h);
+		// }
+		// $('a.flier').click(function(){
+		// 	$('#donate').hide();
+		// 	$('#learn').hide();
+		// 	// $('#flier').show();
+		// });
+		$('a.donate').click(function(){
 			$('#learn').hide();
-			$('#voice').hide();
+			// $('#flier').hide();
 			$('#donate').show();
 		});
-		$('a.learn').click(function(e){
+		$('a.learn').click(function(){
 
-			$('#info').css({'display' : 'inline-block'});
 			$('#donate').hide();
-			$('#voice').hide();
+			// $('#flier').hide();
 			$('#learn').show();
-		});
-		$('a.voice').click(function(e){
-
-			$('#info').css({'display' : 'inline-block'});
-			$('#donate').hide();
-			$('#learn').hide();
-			$('#voice').show();
 		});
 	});
 	</script>
@@ -40,8 +55,8 @@
 			color: #FFF;
 			font-weight: 400;
 			margin: 0px;
+			overflow-x: hidden;
 		}
-
 		header, footer
 		{
 			width: 100%;
@@ -55,19 +70,22 @@
 		}
 		#container
 		{
-			width: 1100px;
+			width: 87vw;
 			margin: 50 auto;
-			text-align: center;
+			counter-reset: counter1;
+		}
+		#info
+		{
+			position: absolute;
+			top: 85px;
+			right: 0px;
+			display: none;
 		}
 		a.nav, #info
 		{
 			font-size: 25px;
 			font-weight: 800;
 			color: pink;
-			width: 210px;
-			height: 450px;
-			display: inline-block;
-			border: 1px solid pink;
 			text-align: left;
 			vertical-align: middle;
 		}
@@ -76,121 +94,218 @@
 			padding: 10px;
 			margin: 10px;
 			text-decoration: underline;
+			display: inline-block;
+			counter-increment: counter1;
+			border: 1px solid pink;
+			width: 25vw;
+			height: 25vw;
 		}
+
+		a.nav::before
+		{
+			content: counter(counter1)"";
+			font-weight: 800;
+			color: #003261;
+			background-color: pink;
+			text-align: center;
+			border-radius: 1em;
+			display: inline-block;
+			height: 25px;
+			width: 25px;
+		}
+
 		a.nav:hover
 		{
 			text-decoration: none;
 			color: #003261;
 			background-color: pink;
 		}
-		a.flier
+
+
+		a.nav:hover::before
 		{
-			width: 1000px;
-			height: auto;
+			content: counter(counter1)"";
+			font-weight: 800;
+			color: #003261;
+			text-align: center;
+			border-radius: 1em;
+			border: 1px solid #003261;
+			display: inline-block;
+			height: 25px;
+			width: 25px;
 		}
-		a.donate:hover::after
-		{
-			content:'Click to view fundraisers by organizations fighting against police violence, and in support of the families of victims of racist police murder and those arrested during protests.';
-			font-weight: 400;
-		}
-		a.voice:hover::after
-		{
-			content:'Click to sign open petitions for justice and contact your local representatives and demand accountability for police violence.';
-			font-weight: 400;
-		}
-		a.learn:hover::after
-		{
-			content:'Click for resources for educating yourself and others, including your children and neighbors.';
-			font-weight: 400;
-		}
-		a.boss:hover::after
-		{
-			content:'Click to download Whitney Evans\' template for a letter to your employer. Collaborate with likeminded co-workers.';
-			font-weight: 400;
-		}
-		a.flier:hover::after
-		{
-			content: 'More visibility nationwide means more financial and moral support for the movement against racist police violence.';
-			font-weight: 400;
-		}
-		div#info
-		{
-			display: none;
-			width: 1020px;
-			height: auto;
-			margin: 0px;
-			padding: 0px;
-		}
+
 		ul
 		{
 			list-style: none;
 			margin: 0px 0px 0px -40px;
 		}
-		ul a
+		ul a, #flier
 		{
-			color: pink;
+			color: #003261;
 			display: block;
 			padding: 15px;
-			border-bottom: 1px solid pink;
+			border-bottom: 1px solid #003261;
+			border-left: 1px solid #003261;
+			background-color: pink;
 			text-decoration: none;
 			font-weight: 400;
 		}
 		ul a:hover
 		{
-			background-color: pink;
-			color: #003261;
+			color: pink;
+			border: 1px solid pink;
+			background-color: #003261;
 			display: block;
 			padding: 15px;
-			border-bottom: 1px solid pink;
 		}
 		ul u
 		{
 			font-weight: 800;
+		}
+		a.donate:hover::after
+		{
+			content:'Click to view fundraisers by organizations fighting against police violence, as well as fundraisers by victims of police violence.';
+			font-weight: 400;
+		}
+		a.donate2:hover::after
+		{
+			content:'Click to view Black mutual aid networks. Whereas organizations have bureaucratic expenses and delays, mutual aid can reach individuals in need directly.';
+			font-weight: 400;
+		}
+		a.donate3:hover::after
+		{
+			content:'Millions of Black Americans have been incarcerated for low-level misdemeanors such as marijuana possession, while white people continue to get a free pass for such offenses';
+			font-weight: 400;
+		}
+		a.shopblack:hover::after
+		{
+			content:'Click to view Black business directories.';
+			font-weight: 400;
+		}
+		a.voice:hover::after
+		{
+			content:'Click to draft an email to demand accountability for police violence and redistribution of police budgets towards real public safety services.';
+			font-weight: 400;
+		}
+		a.voice2:hover::after
+		{
+			content:'Click to sign petitions that haven\'t yet met their goal.';
+			font-weight: 400;
+		}
+		a.learn:hover::after
+		{
+			content:'Click to view resources for educating yourself and others, including your children and neighbors.';
+			font-weight: 400;
+		}
+		a.boss:hover::after
+		{
+			content:'Organize your coworkers to write an open letter to your employer. Click to download Whitney Evans\' letter template.';
+			font-weight: 400;
+		}
+		a.block:hover::after
+		{
+			content:'Click to view Educate Your Block, a community letter-writing campaign for initiating anti-racist education in your neighborhood';
+			font-weight: 400;
+		}
+		a.flier:hover::after
+		{
+			content: 'Sharing information offline means more visibility means more financial and moral support for the movement against racist police violence. Click to view fliers';
+			font-weight: 400;
+		}
+		a.flier::before
+		{
+			font-size: 17px;
+		}
+		#flier
+		{
+			text-align: justify;
 		}
 	</style>
 </head>
 <body>
 	<header>So how can I help?</header>
 	<div id="container">
-		<a href="#" class="donate nav">
-			Donate your money and time.
+		<a href="#" class="donate nav  open">
+			Donate  money to anti-racist organizations<br/>
 		</a>
-		<a href="#" class="voice nav">
-			Use your voice.
+		<a href="https://docs.google.com/document/d/1Dz_CJdKu26ZEEoS8JEa8PQhkSCnroJZ5HdNL7TnzKl8/edit?usp=sharing" target="_blank" class="donate2 nav">
+			Donate  money to Black individuals<br/>
 		</a>
-		<a href="#" class="learn nav">
-			Educate family members, friends, your children, and your neighbors about racism. 
+		<a href="https://deposits.jailatm.com/" target="_blank" class="donate3 nav">
+			Donate  money to Black inmates<br/>
 		</a>
-		<a href="http://how-can-i-help.org/Employer%20Letter%20for%20Accountability.pdf"  target="_blank" class="boss nav">
-			Contact your employer and encourage them to address anti-blackness in the workplace. 
+		<a href="http://shoppeblack.us/" target="_blank" class="shopblack nav">
+			Support Black businesses<br/>
 		</a>
-		<div id="info">
-			<div id="donate">
-				<ul>
-					<a href="https://shoppeblack.us/" target="_blank"><li><u>Shop Black:</u> Support Black businesses - Vote with your dollar</li></a>
-					<a href="https://docs.google.com/spreadsheets/d/1qd2ewV6A6QF0Oz2GDIdQey9O6Ts_TaM3Qi7VUn--nqk/htmlview#" target="_blank"><li><u>Spreadsheet:</u> Where to donate in New Jersey</li></a>
-					<a href="https://secure.everyaction.com/zae4prEeKESHBy0MKXTIcQ2" target="_blank"><li>Donate to <u>Reclaim the Block</u> (Minneapolis)</li></a>
-					<a href="https://secure.everyaction.com/4omQDAR0oUiUagTu0EG-Ig2" target="_blank"><li>Donate to <u>Black Visions Collective</u> (Minneapolis)</li></a>
-					<a href="https://brooklynbailfund.org/donate" target="_blank"><li>Donate to <u>Brooklyn Bail Fund</u></li></a>
-					<a href="https://www.gofundme.com/f/newark-water-coalition-fundraiser/donate" target="_blank"><li><u>GoFundMe:</u> Newark Water Coalition</li></a>
-					<a href="https://docs.google.com/document/d/1CjZMORRVuv-I-qo4B0YfmOTqIOa3GUS207t5iuLZmyA/mobilebasic" target="_blank"><li><u>Document:</u> Fundraisers Nationwide</li></a>
-					<a href="https://docs.google.com/document/u/0/d/1X4-YS3vFn5CLL9QtJSU0xqmTh_h8XilXgOqGAjZISBI/mobilebasic" target="_blank"><li><u>Document:</u> Bail Funds in Every City</li></a>
-					<a href="https://bailfunds.github.io/" target="_blank"><li><u>Donate to</u> Bail Funds Nationwide</li></a>
-					<a href="https://www.gofundme.com/f/georgefloyd" target="_blank"><li><u>GoFundMe:</u> George Floyd</li></a>
-					<a href="https://secure.actblue.com/donate/ms_blm_homepage_2019" target="_blank"><li>Donate to <u>Black Lives Matter</u></li></a>
-					<a href="https://minnesotafreedomfund.org/donate" target="_blank"><li>Donate to <u>Minnesota Freedom Fund</u></li></a>
-					<a href="https://action.justiceforbreonna.org/sign/BreonnaWasEssential/" target="_blank"><li><li><u>GoFundMe:</u> Breonna Taylor</li></a>
-					<a href="http://nationalbailout.org" target="_blank"><li>Donate to <u>National Bailout</u></li></a></ul>
-				</div>
-			<div id="voice">
-				<ul><a href="http://nomoreracistcops.github.io/" target="_blank"><li><u>No More Racist Cops:</u> Contact your local representatives and demand an end to racist police violence</li></a>
-					<a href="https://pendingpetition.carrd.co/" target="_blank"><li><u>Pending Petition:</u> Click to sign petitions that haven't yet met their goal</li></a></ul>
-				</div>
-			<div id="learn">
-				<ul>
+		<a href="http://nomoreracistcops.github.io/" target="_blank" class="voice nav">
+			Contact your local representatives<br/>
+		</a>
+		<a href="https://pendingpetition.carrd.co/" target="_blank" class="voice2 nav">
+			Sign petitions for victims of police violence<br/>
+		</a>
+		<a href="http://how-can-i-help.org/Employer%20Letter%20for%20Accountability.pdf" target="_blank" class="boss nav">
+			Contact your employer to end anti-blackness in the workplace<br/> 
+		</a>
+		<a href="#" class="learn nav open">
+			Educate family members, friends, and your children about racism.<br/> 
+		</a>
+		<a href="http://how-can-i-help.org/educate.html" target="_blank" class="block nav">
+			Organize against racism with your neighbors<br/> 
+		</a>
+		<a href="http://how-can-i-help.org/flier.pdf" target="_blank" class="flier nav">
+			Post "How Can I Help?" fliers in your neighborhood.<br/>
+		</a>
+	</div>
+
+	<div id="info">
+		<!-- <div id="flier">
+			<p>Flyering is easy. Select the fliers you want below, print out 50 at a time, and put them in a backpack with a stapler and some tape. Whenever you go out for a walk, bike ride, or a trip to the grocery store, take the backpack with you and staple some flyers up in local parks, downtowns, and stores.</p>
+		</div> -->
+		<div id="donate">
+			<ul>
+				<a href="https://docs.google.com/spreadsheets/d/1qd2ewV6A6QF0Oz2GDIdQey9O6Ts_TaM3Qi7VUn--nqk/htmlview#" target="_blank">
+					<li><u>Spreadsheet:</u> Where to donate in New Jersey</li>
+				</a>
+				<a href="https://secure.everyaction.com/zae4prEeKESHBy0MKXTIcQ2" target="_blank">
+					<li>Donate to <u>Reclaim the Block</u> (Minneapolis)</li>
+				</a>
+				<a href="https://secure.everyaction.com/4omQDAR0oUiUagTu0EG-Ig2" target="_blank">
+					<li>Donate to <u>Black Visions Collective</u> (Minneapolis)</li>
+				</a>
+				<a href="https://brooklynbailfund.org/donate" target="_blank">
+					<li>Donate to <u>Brooklyn Bail Fund</u></li>
+				</a>
+				<a href="https://www.gofundme.com/f/newark-water-coalition-fundraiser/donate" target="_blank">
+					<li><u>GoFundMe:</u> Newark Water Coalition</li>
+				</a>
+				<a href="https://docs.google.com/document/d/1CjZMORRVuv-I-qo4B0YfmOTqIOa3GUS207t5iuLZmyA/mobilebasic" target="_blank">
+					<li><u>Document:</u> Fundraisers Nationwide</li>
+				</a>
+				<a href="https://docs.google.com/document/u/0/d/1X4-YS3vFn5CLL9QtJSU0xqmTh_h8XilXgOqGAjZISBI/mobilebasic" target="_blank">
+					<li><u>Document:</u> Bail Funds in Every City</li>
+				</a>
+				<a href="https://bailfunds.github.io/" target="_blank">
+					<li><u>Donate to</u> Bail Funds Nationwide</li>
+				</a>
+				<a href="https://www.gofundme.com/f/georgefloyd" target="_blank">
+					<li><u>GoFundMe:</u> George Floyd</li>
+				</a>
+				<a href="https://secure.actblue.com/donate/ms_blm_homepage_2019" target="_blank">
+					<li>Donate to <u>Black Lives Matter</u></li>
+				</a>
+				<a href="https://action.justiceforbreonna.org/sign/BreonnaWasEssential/" target="_blank">
+					<li><u>GoFundMe:</u> Breonna Taylor</li>
+				</a>
+				<a href="http://nationalbailout.org" target="_blank">
+					<li>Donate to <u>National Bailout</u></li>
+				</a>
+			</ul>
+		</div>
+		<div id="learn">
+			<ul>
 					<a href="https://docs.google.com/document/u/4/d/1BRlF2_zhNe86SGgHa6-VlBO-QgirITwCTugSfKie5Fs/mobilebasic?fbclid=IwAR2h9Z-bTvvSfo92k47YL0bjy6ZvYLYMD6nZsO9jiNi4cV0NA0wlN94jXsM" target="_blank"><li><u>Document:</u> Anti-racism for White People: Educating Yourself, Your Peers, Your Family and Children, and Others</li></a>
 					<a href="https://docs.google.com/document/d/1dXGQhfkf6--1haHxxnQER3mvBHlUcCYHxT3CKLBOwZY/edit" target="_blank"><li><u>Document:</u> How to teach your kids about race and racism</li></a>
-					<a href="http://how-can-i-help.org/educate.html" target="_blank"><li> <u>Educate your block:</u> A letter writing campaign for collaborating with neighbors to challenge racism in your community</li></a>
 					<a href="https://lettersforblacklives.com/chinese-trad-6770eed17e9" target="_blank"><li><u>Document:</u> 親愛的媽媽、爸爸、叔叔、阿姨：我們也珍惜黑人的生命</li></a>
 					<a href="https://lettersforblacklives.com/chinese-simp-edbf828433c3" target="_blank"><li><u>Document:</u>  亲爱的妈妈、爸爸、叔叔、阿姨：我们也珍惜黑人的生命</li></a>
 					<a href="https://lettersforblacklives.com/queridos-m%C3%A3e-pai-tio-tia-as-vidas-dos-negros-tamb%C3%A9m-importam-d610375ea8d0" target="_blank"><li><u>Document:</u> Queridos mãe, pai, tio, tia: as vidas dos negros também importam</li></a>
@@ -207,14 +322,7 @@
 					<a href="http://araborganizing.org/wp-content/uploads/2019/08/AROC_Buildtheblock_Arabic_IC_5aPRINT.pdf" target="_blank"><li><u>Document:</u> Tatwir bada2il lnidham alshurtah fi mujtma3at el3rabiah walmuslimah (Arabic)</li></a>
 					<a href="http://araborganizing.org/wp-content/uploads/2019/08/AROC_Build-the-Block-Alternatives-to-Policing.pdf" target="_blank"><li><u>Document:</u> Developing Alternatives to Policing</li></a>
 				</ul>
-
-				
-				
 			</div>
-		</div>
-		<a href="flier.pdf" target="_blank" class="flier nav">
-			Print out our flier and post it up around your home. Hang them up at grocery stores and parks to ensure maximum visibility during COVID.
-		</a>
 	</div>
 	<footer>Thank you</footer>
 </body>
