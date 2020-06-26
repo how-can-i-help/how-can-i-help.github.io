@@ -2,7 +2,7 @@
 <head>
 	<link rel="icon" href="https://nomoreracistcops.github.io/img.png"/>
 	<title>How Can I Help End Police Racism?</title>
-	<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,800|Press+Start+2P&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600,800|Press+Start+2P&display=swap" rel="stylesheet">
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
 	<script type="text/javascript">
@@ -10,11 +10,11 @@
 		$('.open').click(function(){
 			$('#info').show();
 			$('#container').animate({
-				'width' : '70vw',
+				'width' : '60vw',
 				'text-align': 'left',
 				'margin' : '50 0 50 0'
 			}, 300);
-			$('#info').animate({'width' : '30vw'}, 300);
+			$('#info').animate({'width' : '40vw'}, 300);
 			// resize();
 		});
 		// function resize(){
@@ -26,20 +26,29 @@
 		// 	$('#info ul').height(h);
 		// 	$('#info').height(h);
 		// }
-		// $('a.flier').click(function(){
-		// 	$('#donate').hide();
-		// 	$('#learn').hide();
-		// 	// $('#flier').show();
-		// });
+		$('a.flier').click(function(){
+			$('#donate').hide();
+			$('#learn').hide();
+			$('#nocall').hide();
+			$('#flier').show();
+		});
+		$('a.nocall').click(function(){
+			$('#donate').hide();
+			$('#learn').hide();
+			$('#flier').hide();
+			$('#nocall').show();
+		});
 		$('a.donate').click(function(){
 			$('#learn').hide();
-			// $('#flier').hide();
+			$('#flier').hide();
+			$('#nocall').hide();
 			$('#donate').show();
 		});
 		$('a.learn').click(function(){
 
 			$('#donate').hide();
-			// $('#flier').hide();
+			$('#flier').hide();
+			$('#nocall').hide();
 			$('#learn').show();
 		});
 	});
@@ -103,7 +112,7 @@
 
 		a.nav::before
 		{
-			content: counter(counter1)"";
+			content: counter(counter1);
 			font-weight: 800;
 			color: #003261;
 			background-color: pink;
@@ -112,6 +121,7 @@
 			display: inline-block;
 			height: 25px;
 			width: 25px;
+			line-height: 25px;
 		}
 
 		a.nav:hover
@@ -121,37 +131,32 @@
 			background-color: pink;
 		}
 
-
 		a.nav:hover::before
 		{
-			content: counter(counter1)"";
-			font-weight: 800;
 			color: #003261;
-			text-align: center;
 			border-radius: 1em;
 			border: 1px solid #003261;
-			display: inline-block;
-			height: 25px;
-			width: 25px;
 		}
-
 		ul
 		{
 			list-style: none;
 			margin: 0px 0px 0px -40px;
 		}
-		ul a, #flier
+		ul a
 		{
+			text-decoration: none;
+		}
+		ul li, ul a li
+		{
+			padding: 15px;
 			color: #003261;
 			display: block;
-			padding: 15px;
 			border-bottom: 1px solid #003261;
 			border-left: 1px solid #003261;
 			background-color: pink;
-			text-decoration: none;
 			font-weight: 400;
 		}
-		ul a:hover
+		ul a:hover li
 		{
 			color: pink;
 			border: 1px solid pink;
@@ -163,14 +168,75 @@
 		{
 			font-weight: 800;
 		}
+		ul.innerul
+		{
+			padding: 10px 0px 0px 40px;
+			border: 0px;
+			counter-reset: counter2;
+		}
+		ul.innerul li
+		{
+			border: none;
+			padding: 0px;
+		}
+
+		ul.innerul li, ul.innerul li a
+		{
+			color: #003261;
+			font-size: 20px;
+			border-bottom: none;
+			background-color: transparent;
+		}
+		ul.innerul li a, ul.innerul li.count
+		{
+			counter-increment: counter2;
+			margin-left: 35px;
+			position: relative;
+		}
+		ul.innerul > li.count::before, ul.innerul > li a::before
+		{
+			position: absolute;
+			left: -30px;
+		}
+		ul.innerul li a::before, ul.innerul li.count::before
+		{
+			content: counter(counter2);
+			font-weight: 600;
+			background-color: #003261;
+			color: pink;
+			border: 1px solid #003261;
+			text-align: center;
+			border-radius: 1em;
+			display: inline-block;
+			height: 20px;
+			width: 20px;
+			font-size: 17px;
+			text-align: center;
+			line-height: 20px;
+		}
+		ul.innerul li a:hover
+		{
+			text-decoration: underline;
+		}
+
+		ul.innerul li a:hover::before
+		{
+			color: #003261;
+			background-color: pink;
+		}
 		a.donate:hover::after
 		{
 			content:'Click to view fundraisers by organizations fighting against police violence, as well as fundraisers by victims of police violence.';
 			font-weight: 400;
 		}
-		a.donate2:hover::after
+		a.nocall:hover::after
 		{
-			content:'Click to view Black mutual aid networks. Whereas organizations have bureaucratic expenses and delays, mutual aid can reach individuals in need directly.';
+			content:'Click to develop alternative emergency plans.';
+			font-weight: 400;
+		}
+		a.social:hover::after
+		{
+			content:'Click to read strategies for how to use social media.';
 			font-weight: 400;
 		}
 		a.donate3:hover::after
@@ -213,21 +279,23 @@
 			content: 'Sharing information offline means more visibility means more financial and moral support for the movement against racist police violence. Click to view fliers';
 			font-weight: 400;
 		}
-		a.flier::before
+		a.small::before
 		{
 			font-size: 17px;
-		}
-		#flier
-		{
-			text-align: justify;
 		}
 	</style>
 </head>
 <body>
 	<header>So how can I help?</header>
 	<div id="container">
-		<a href="#" class="donate nav  open">
+		<a href="#" class="donate nav open">
 			Donate  money to anti-racist organizations<br/>
+		</a>
+		<a href="#" class="nocall nav open">
+			Stop calling the police<br/>
+		</a>
+		<a href="#" class="social nav">
+			Use social media to educate and inform<br/>
 		</a>
 		<a href="https://docs.google.com/document/d/1Dz_CJdKu26ZEEoS8JEa8PQhkSCnroJZ5HdNL7TnzKl8/edit?usp=sharing" target="_blank" class="donate2 nav">
 			Donate  money to Black individuals<br/>
@@ -247,21 +315,79 @@
 		<a href="http://how-can-i-help.org/Employer%20Letter%20for%20Accountability.pdf" target="_blank" class="boss nav">
 			Contact your employer to end anti-blackness in the workplace<br/> 
 		</a>
-		<a href="#" class="learn nav open">
+		<a href="#" class="learn nav open small">
 			Educate family members, friends, and your children about racism.<br/> 
 		</a>
-		<a href="http://how-can-i-help.org/educate.html" target="_blank" class="block nav">
+		<a href="http://how-can-i-help.org/educate.html" target="_blank" class="block nav small">
 			Organize against racism with your neighbors<br/> 
 		</a>
-		<a href="http://how-can-i-help.org/flier.pdf" target="_blank" class="flier nav">
+		<a href="#" class="flier nav small open">
 			Post "How Can I Help?" fliers in your neighborhood.<br/>
 		</a>
 	</div>
 
 	<div id="info">
-		<!-- <div id="flier">
-			<p>Flyering is easy. Select the fliers you want below, print out 50 at a time, and put them in a backpack with a stapler and some tape. Whenever you go out for a walk, bike ride, or a trip to the grocery store, take the backpack with you and staple some flyers up in local parks, downtowns, and stores.</p>
-		</div> -->
+		<div id="flier">
+			<ul>
+				<li>Flyering is easy. Just select the fliers below that are relevant to your community, download them, and print out as many copies as you can. Put the fliers in a backpack with a stapler (don’t forget extra staples) and some tape, and take the backpack with you whenever you leave the house for a walk, a bike ride, or a trip to the grocery store.</li>
+				<li>
+					<ul class="innerul">
+						<li><b>Fliers:</b></li>
+						<li><a href="http://how-can-i-help.org/flier.pdf" target="_blank">Racism happens here</a></li>
+						<li><a href="http://how-can-i-help.org/abolish.pdf" target="_blank">What does "abolish the police" mean?</a></li>
+						<li><a href="http://how-can-i-help.org/new jersey.pdf" target="_blank">New Jersey is no exception</a></li>
+						<li><a href="http://how-can-i-help.org/redlining maps (Union County).pdf" target="_blank">Redlining (Union County Map)</a></li>
+						<li><a href="http://how-can-i-help.org/redlining timeline.pdf" target="_blank">Redlining timeline</a></li>
+						<li><a href="http://how-can-i-help.org/redlining.pdf" target="_blank">Redlining (Ta-Nehisi Coates Quote)</a></li>
+						<li><a href="http://how-can-i-help.org/flier with data_westfield.pdf" target="_blank">Racism happens here (Westfield NJ)</a></li>
+						<li><a href="http://how-can-i-help.org/flier with data_cranford.pdf" target="_blank">Racism happens here (Cranford NJ)</a></li>
+					</ul>
+				</li>
+				<li>
+					<ul class="innerul">
+						<li><b>Where should I post fliers?</b></li>
+						<li><b>In residential areas:</b> telephone poles, best visibility at street intersections</li>
+						<li><b>In local parks:</b> on trees and posts along walking paths</li>
+						<li><b>In downtown areas:</b> near parking meters, on trash cans</li>
+						<li><b>Local businesses:</b> At the entrance and exit of grocery stores. *Ask permission before posting fliers on private property. Many local business owners are happy to give permission.</li>
+						<li><b>Transit:</b> At the entance and exit of public transit (train stations, bus stops)</li>
+					</ul>
+				</li>
+
+				<li>Fliers tend to get torn down within a few days. That’s why it’s good to incorporate flyering into your routine walks, bike rides, and grocery trips. If you post 100 fliers in 1 day and never go flyering again, you may reach fewer people than if you post 10 fliers on 10 days over the course of a month.</li>
+
+				<li>If you see a home with some outward sign of support— for example a rainbow flag, a peace flag, one of those “In this house we believe” or “All neighbors are welcome here” signs— consider leaving a flier in their mailbox with an introductory note and your contact info on it. Offer to share anti-racist resources with them. It will help you build a local anti-racist education network.</li>
+
+				<li>Avoid provocation and look out for your own safety while flyering— threats of violence have been made against flyerers online. COVID-19 is ongoing, so wear gloves when stapling or taping to surfaces in public.</li> 
+
+				<li>Be mindful of Black community members when flyering— do not post anywhere that may endanger Black people or create additional stress for Black people going about their daily lives in majority-white communities.</li>
+
+			</ul>
+
+		</div>
+		<div id="nocall">
+			<ul>
+				<li>Calling the police can amount to calling in an execution, so don't rely on the police for the safety of your family and your community.
+					<ul class="innerul">
+						<li><b>You can put together a contact list of other people you can call.</b> This might include: </li>
+						<li class="count">Neighbors' phone numbers</li>
+						<li class="count">Mental health crisis hotline for your area</li>
+						<li class="count">Domestic violence crisis hotline for your area</li>
+						<li class="count">Substance abuse crisis hotline for your area</li>
+						<li>Put the contact list on your refrigerator and reference it in emergencies. Next, read the guides below to learn how else you can reduce your reliance on calling the police.</li>
+					</ul>
+				</li>
+				<a href="https://www.aaronxrose.com/blog/alternatives-to-police" target="_blank">
+					<li><u>Guide:</u> What to do instead of calling the police</li>
+				</a>
+				<a href="https://ia800800.us.archive.org/1/items/12ThingsToDoInsteadOfCallingTheCops/12things-screen.pdf" target="_blank" target="_blank">
+					<li><u>Zine:</u> 12 things to do instead of calling the police</li>
+				</a>
+				<a href="https://www.uua.org/safe/handbook/alternatives-calling-police" target="_blank">
+					<li><u>Guide:</u> Alternatives to calling the police (Unitarian Universalist Association)</li>
+				</a>
+			</ul>
+		</div>
 		<div id="donate">
 			<ul>
 				<a href="https://docs.google.com/spreadsheets/d/1qd2ewV6A6QF0Oz2GDIdQey9O6Ts_TaM3Qi7VUn--nqk/htmlview#" target="_blank">
