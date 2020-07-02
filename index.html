@@ -30,18 +30,24 @@
 			$('#donate').hide();
 			$('#learn').hide();
 			$('#nocall').hide();
+			$('#social').hide();
+			$('#volunteer').hide();
 			$('#flier').show();
 		});
 		$('a.nocall').click(function(){
 			$('#donate').hide();
 			$('#learn').hide();
 			$('#flier').hide();
+			$('#social').hide();
+			$('#volunteer').hide();
 			$('#nocall').show();
 		});
 		$('a.donate').click(function(){
 			$('#learn').hide();
 			$('#flier').hide();
 			$('#nocall').hide();
+			$('#social').hide();
+			$('#volunteer').hide();
 			$('#donate').show();
 		});
 		$('a.learn').click(function(){
@@ -49,7 +55,27 @@
 			$('#donate').hide();
 			$('#flier').hide();
 			$('#nocall').hide();
+			$('#social').hide();
+			$('#volunteer').hide();
 			$('#learn').show();
+		});
+		$('a.social').click(function(){
+
+			$('#donate').hide();
+			$('#flier').hide();
+			$('#nocall').hide();
+			$('#learn').hide();
+			$('#volunteer').hide();
+			$('#social').show();
+		});
+		$('a.volunteer').click(function(){
+
+			$('#donate').hide();
+			$('#flier').hide();
+			$('#nocall').hide();
+			$('#social').hide();
+			$('#learn').hide();
+			$('#volunteer').show();
 		});
 	});
 	</script>
@@ -239,6 +265,16 @@
 			content:'Click to read strategies for how to use social media.';
 			font-weight: 400;
 		}
+		a.voice:hover::after
+		{
+			content:'Click to draft an email to demand accountability for police violence and redistribution of police budgets towards real public safety services.';
+			font-weight: 400;
+		}
+		a.volunteer:hover::after
+		{
+			content:'Click to view how you contribute your time to the fight against racism and poverty.';
+			font-weight: 400;
+		}
 		a.donate3:hover::after
 		{
 			content:'Millions of Black Americans have been incarcerated for low-level misdemeanors such as marijuana possession, while white people continue to get a free pass for such offenses';
@@ -247,11 +283,6 @@
 		a.shopblack:hover::after
 		{
 			content:'Click to view Black business directories.';
-			font-weight: 400;
-		}
-		a.voice:hover::after
-		{
-			content:'Click to draft an email to demand accountability for police violence and redistribution of police budgets towards real public safety services.';
 			font-weight: 400;
 		}
 		a.voice2:hover::after
@@ -294,8 +325,14 @@
 		<a href="#" class="nocall nav open">
 			Stop calling the police<br/>
 		</a>
-		<a href="#" class="social nav">
+		<a href="#" class="social nav open">
 			Use social media to educate and inform<br/>
+		</a>
+		<a href="http://nomoreracistcops.github.io/" target="_blank" class="voice nav">
+			Contact your local representatives<br/>
+		</a>
+		<a href="#" class="volunteer nav open">
+			Volunteer / do direct service<br/>
 		</a>
 		<a href="https://docs.google.com/document/d/1Dz_CJdKu26ZEEoS8JEa8PQhkSCnroJZ5HdNL7TnzKl8/edit?usp=sharing" target="_blank" class="donate2 nav">
 			Donate  money to Black individuals<br/>
@@ -306,13 +343,10 @@
 		<a href="http://shoppeblack.us/" target="_blank" class="shopblack nav">
 			Support Black businesses<br/>
 		</a>
-		<a href="http://nomoreracistcops.github.io/" target="_blank" class="voice nav">
-			Contact your local representatives<br/>
-		</a>
 		<a href="https://pendingpetition.carrd.co/" target="_blank" class="voice2 nav">
 			Sign petitions for victims of police violence<br/>
 		</a>
-		<a href="http://how-can-i-help.org/Employer%20Letter%20for%20Accountability.pdf" target="_blank" class="boss nav">
+		<a href="http://how-can-i-help.org/Employer%20Letter%20for%20Accountability.pdf" target="_blank" class="boss nav small">
 			Contact your employer to end anti-blackness in the workplace<br/> 
 		</a>
 		<a href="#" class="learn nav open small">
@@ -447,6 +481,27 @@
 					<a href="https://www.instagram.com/p/CA3zLmYDrMw/?igshid=3nvda3xlfjqk" target="_blank"><li><u>Instagram post:</u> Six Ways for Arabs to Resist Anti-Blackness</li></a>
 					<a href="http://araborganizing.org/wp-content/uploads/2019/08/AROC_Buildtheblock_Arabic_IC_5aPRINT.pdf" target="_blank"><li><u>Document:</u> Tatwir bada2il lnidham alshurtah fi mujtma3at el3rabiah walmuslimah (Arabic)</li></a>
 					<a href="http://araborganizing.org/wp-content/uploads/2019/08/AROC_Build-the-Block-Alternatives-to-Policing.pdf" target="_blank"><li><u>Document:</u> Developing Alternatives to Policing</li></a>
+				</ul>
+			</div>
+			<div id="social">
+				<ul>
+					<li>By posting on social media, you can help bring new people into the Black Lives Matter movement. You can also help spread information about opportunities for direct action and direct service, such as protests, city council meetings, and calls for donations or volunteers.</li>
+				</ul>
+			</div>
+			<div id="volunteer">
+				<ul>
+					<li>Volunteering your time and skills will help build the network of community servants and crisis responders that will replace the police. </li>
+					<li>
+						<ul class="innerul">
+							<li><b>Where should I volunteer?</b></li>
+							<li class="count">Volunteer to feed the hungry</li>
+							<li class="count">Volunteer to house the unhoused (homeless)</li>
+							<li class="count">Are you good at <b>web design</b>? <b>fundraising</b>? <b>analyzing data</b>? <b>coding</b>? <b>art</b>? Contribute your skills and expertise to activist's efforts</li>
+							<li class="count">Look up an organization that can help you train to assist in <b>conflict mediation</b></li>
+							<li class="count">Look up an organization that can help you train to assist in <b>domestic violence crisis support</b></li>
+							<li class="count">Look up an organization that can help you train  to assist in <b>mental health crisis support</b></li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 	</div>
